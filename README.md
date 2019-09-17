@@ -26,11 +26,8 @@ class Program
             }
             while (int.TryParse(end, out textEnd));
 
-
-            var res = from c in MyCountries
-                      where c.StartsWith(start) && c.EndsWith(end)
-                      select c;
-            foreach (var item in res)
+            var result = MyCountries.Where(x => x.StartsWith(start) && x.EndsWith(end));      
+            foreach (var item in result)
             {
                 Console.WriteLine(item);
             }
