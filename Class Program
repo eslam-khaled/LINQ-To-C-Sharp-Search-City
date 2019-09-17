@@ -4,8 +4,11 @@ class Program
         {
             int text;
             int textEnd;
+            //Create a list from type string and assing cities names to it.
             List<string> MyCountries = new List<string> { "cairo", "aswan", "londen", "luxor", "vienna", "boland", "islamabad" };
+            //an empty variable to be used to hold the first character. 
             var start = "";
+            //Do-While block to ensure the entered value is not a number for the first value.
             do
             {
                 Console.WriteLine("Enter start litter");
@@ -13,8 +16,9 @@ class Program
 
             }
             while (int.TryParse(start, out text));
-
+            //an empty variable to be used to hold the second character. 
             var end = "";
+            //Do-While block to ensure the entered value is not a number for the second value.
             do
             {
                 Console.WriteLine("Enter End litter");
@@ -22,8 +26,9 @@ class Program
                 Console.WriteLine("Not a String, please try again.");
             }
             while (int.TryParse(end, out textEnd));
-
-            var result = MyCountries.Where(x => x.StartsWith(start) && x.EndsWith(end));      
+            //LINQ code to select by a condition setting the first and last characters.
+            var result = MyCountries.Where(x => x.StartsWith(start) && x.EndsWith(end));    
+            //for to print the final result.
             foreach (var item in result)
             {
                 Console.WriteLine(item);
